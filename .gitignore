@@ -7,3 +7,5 @@ dist/
 
 # IDE
 .idea/
+
+.ipynb_checkpoints/
