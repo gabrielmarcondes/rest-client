@@ -68,6 +68,11 @@ class TestBasic:
         requests.get.assert_called_once_with('http://localhost/books/',
                                              params=dumb_params)
 
+    def test_other_characters(self, mocker, client):
+        mocker.patch('requests.get')
+        getattr(client, "some-thing").list()
+        requests.get.assert_called_once_with('http://localhost/some-thing/')
+
     def test_client_create(self, mocker, client):
         mocker.patch('requests.post')
         dumb_data = {"data": "something"}
